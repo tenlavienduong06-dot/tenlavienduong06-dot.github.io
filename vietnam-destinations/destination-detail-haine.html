@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vietnam Destinations</title>
+  <meta name="description"
+    content="Discover Sa Pa — the gateway to Vietnam's majestic northern highlands, home to terraced rice fields, ethnic hill tribes, and the roof of Indochina.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #0EA5E9;
+      --color-primary-dark: #0284C7;
+      --color-accent: #F97316;
+      --color-bg: #F0F9FF;
+      --color-bg-white: #FFFFFF;
+      --color-text-primary: #0C4A6E;
+      --color-text-secondary: #475569;
+      --color-text-muted: #94A3B8;
+      --color-border: #BAE6FD;
+      --color-north: #059669;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 12px rgba(14, 165, 233, 0.12);
+      --shadow-lg: 0 8px 32px rgba(14, 165, 233, 0.15);
+      --transition-base: 250ms ease;
+      --nav-height: 72px;
+      --max-width: 1100px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1200px;
+      height: var(--nav-height);
+      background: var(--color-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-2xl);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 1000;
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+    }
+
+    .nav-logo-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      padding: 0.5rem 0.875rem;
+      border-radius: 999px;
+      transition: all var(--transition-base);
+    }
+
+    .nav-links a:hover {
+      color: var(--color-primary);
+      background: rgba(14, 165, 233, 0.08);
+    }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      background: rgba(14, 165, 233, 0.08);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      transition: all var(--transition-base);
+    }
+
+    .nav-back svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .nav-back:hover {
+      background: rgba(14, 165, 233, 0.16);
+    }
+
+    /* HERO */
+    .detail-hero {
+      position: relative;
+      height: 70vh;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-img-placeholder {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #047857 0%, #065F46 50%, #1a6b52 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img-placeholder-text {
+      font-family: var(--font-heading);
+      font-size: 8rem;
+      font-weight: 700;
+      opacity: 0.06;
+      color: white;
+      letter-spacing: -4px;
+      user-select: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: calc(var(--nav-height) + 2rem) 3rem 3rem;
+      width: 100%;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, 0.65);
+      transition: color var(--transition-base);
+    }
+
+    .breadcrumb a:hover {
+      color: white;
+    }
+
+    .breadcrumb-sep {
+      font-size: 0.7rem;
+      opacity: 0.5;
+    }
+
+    .hero-region-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(5, 150, 105, 0.85);
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      border-radius: 4px;
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 0.875rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: white;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.125rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 500px;
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      right: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+      animation: bounce 2s ease infinite;
+    }
+
+    .hero-scroll-hint svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    /* CONTENT */
+    .detail-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    /* QUICK INFO BAR */
+    .quick-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .quick-info-item {
+      background: white;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .qi-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+    }
+
+    .qi-value {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    .qi-sub {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* SECTION STYLES */
+    .detail-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+
+    .section-h2 {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .section-body {
+      font-size: 1.0625rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      max-width: 700px;
+    }
+
+    /* HIGHLIGHTS GRID */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .highlight-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .highlight-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .highlight-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-lg);
+      background: rgba(14, 165, 233, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--color-primary);
+    }
+
+    .highlight-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-card-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* BEST SEASON */
+    .season-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--color-border);
+      gap: 1px;
+    }
+
+    .season-item {
+      background: white;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .season-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .season-months {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .season-desc {
+      font-size: 0.78rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    .season-item.best {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(56, 189, 248, 0.05));
+      border: 2px solid var(--color-primary);
+      border-radius: var(--radius-lg);
+      position: relative;
+    }
+
+    .season-item.best .season-name {
+      color: var(--color-primary);
+    }
+
+    .best-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-primary);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.6rem;
+      border-radius: 99px;
+    }
+
+    /* FOOD */
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .food-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+    }
+
+    .food-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .food-img {
+      height: 150px;
+      background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .food-info {
+      padding: 1rem;
+    }
+
+    .food-name {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .food-desc {
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    /* PHOTO GALLERY — Real images */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 240px;
+      gap: 0.75rem;
+    }
+
+    .photo-item {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      background: #D1FAE5;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .photo-item:first-child {
+      grid-row: span 2;
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 0.875rem;
+      left: 1rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.92);
+      background: rgba(0, 0, 0, 0.38);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* BACK BUTTON */
+    .back-section {
+      padding: 2rem 2rem 4rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      border: 1.5px solid var(--color-primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      transition: all var(--transition-base);
+    }
+
+    .btn-back:hover {
+      background: rgba(14, 165, 233, 0.08);
+    }
+
+    .btn-back svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .next-dest {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .next-label {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .next-name {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    .btn-next {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: white;
+      background: var(--color-primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      transition: all var(--transition-base);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+    }
+
+    .btn-next:hover {
+      background: var(--color-primary-dark);
+      transform: translateX(3px);
+    }
+
+    .btn-next svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #051929;
+      padding: 2rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+
+    footer .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.45);
+      transition: color var(--transition-base);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary-light);
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .highlights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .food-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .photo-item:first-child {
+        grid-row: span 1;
+      }
+
+      .season-timeline {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .back-section {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .quick-info {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        </svg>
+      </div>
+      ETOURISMGR4
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="destinations.html" class="nav-back" id="nav-back-btn">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+      </svg>
+      Back to Map
+    </a>
+    <div id="auth-nav-placeholder"></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="detail-hero" id="detail-hero">
+    <div class="hero-img-placeholder" id="hero-img-wrap">
+      <!-- JS will inject a real <img> here -->
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="destinations.html">Destinations</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Sa Pa</span>
+      </nav>
+      <div class="hero-region-tag" id="region-tag">Northern Vietnam</div>
+      <h1 class="hero-title" id="dest-title">Sa Pa</h1>
+      <p class="hero-tagline" id="dest-tagline">"Where clouds touch the mountaintops"</p>
+    </div>
+    <div class="hero-scroll-hint">
+      <svg viewBox="0 0 24 24">
+        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+      </svg>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- DETAIL CONTENT -->
+  <div class="detail-content">
+
+    <!-- QUICK INFO -->
+    <div class="quick-info reveal">
+      <div class="quick-info-item">
+        <span class="qi-label">Location</span>
+        <span class="qi-value" id="qi-location">Lào Cai Province</span>
+        <span class="qi-sub">Northern Vietnam</span>
+      </div>
+      <div class="quick-info-item">
+        <span class="qi-label">Best Time to Visit</span>
+        <span class="qi-value" id="qi-season">Sep – Nov</span>
+        <span class="qi-sub">Cool, clear skies & golden rice terraces</span>
+      </div>
+      <div class="quick-info-item">
+        <span class="qi-label">Highlight</span>
+        <span class="qi-value" id="qi-highlight">Fansipan Peak</span>
+        <span class="qi-sub">Roof of Indochina — 3,143m above sea level</span>
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="detail-section reveal">
+      <div class="section-header">
+        <div class="section-eyebrow">About</div>
+        <h2 class="section-h2" id="about-title">A World Above the Clouds</h2>
+      </div>
+      <p class="section-body" id="about-text">
+        Nestled in the Hoàng Liên Sơn mountain range near the Chinese border, Sa Pa is a captivating highland town that
+        enchants visitors with its dramatic scenery, vibrant hill tribe cultures, and misty mountain landscapes. Rising
+        to an altitude of about 1,600m above sea level, Sa Pa serves as the gateway to Fansipan — Vietnam's highest peak
+        and "Roof of Indochina."
+      </p>
+      <br>
+      <p class="section-body" style="margin-top: 1rem;" id="about-text2">
+        The surrounding valleys are blanketed with some of Southeast Asia's most spectacular terraced rice fields,
+        painstakingly carved into the mountainsides by the Hmong, Dao, Tay, Giay, and Xa Pho ethnic minority peoples
+        over centuries. During harvest season, the terraces turn a breathtaking shade of gold.
+      </p>
+    </div>
+
+    <!-- HIGHLIGHTS -->
+    <div class="detail-section reveal">
+      <div class="section-header">
+        <div class="section-eyebrow">Top Attractions</div>
+        <h2 class="section-h2">Must-See Highlights</h2>
+      </div>
+      <div class="highlights-grid" id="highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z" />
+            </svg>
+          </div>
+          <div class="highlight-card-title">Fansipan Peak</div>
+          <p class="highlight-card-desc">The "Roof of Indochina" at 3,143m. Accessible by cable car or a challenging
+            2-day trek through pristine cloud forests.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+            </svg>
+          </div>
+          <div class="highlight-card-title">Muong Hoa Valley</div>
+          <p class="highlight-card-desc">Stunning terraced rice fields between Sa Pa town and the villages of Lao Chai
+            and Ta Van. Best during September–November harvest.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+          </div>
+          <div class="highlight-card-title">Ethnic Village Trek</div>
+          <p class="highlight-card-desc">Walk through Hmong and Dao villages like Cát Cát, Lao Chai, and Ta Van.
+            Experience traditional textiles, local markets, and ceremonies.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTOS — Real gallery from assets -->
+    <div class="detail-section reveal">
+      <div class="section-header">
+        <div class="section-eyebrow">Gallery</div>
+        <h2 class="section-h2">Photo Gallery</h2>
+      </div>
+      <div class="photo-gallery" id="photo-gallery">
+        <!-- JS will inject photos here based on destination -->
+      </div>
+    </div>
+
+    <!-- BEST SEASON -->
+    <div class="detail-section reveal">
+      <div class="section-header">
+        <div class="section-eyebrow">When to Go</div>
+        <h2 class="section-h2">Best Season to Visit</h2>
+      </div>
+      <div class="season-timeline" id="season-timeline">
+        <div class="season-item">
+          <div class="season-name">Spring</div>
+          <div class="season-months">Mar – May</div>
+          <div class="season-desc">Warm, flowers bloom. Occasional rain. Good for trekking.</div>
+        </div>
+        <div class="season-item">
+          <div class="season-name">Summer</div>
+          <div class="season-months">Jun – Aug</div>
+          <div class="season-desc">Rainy season. Terraces fill with water — beautiful reflections.</div>
+        </div>
+        <div class="season-item best">
+          <div class="best-badge">✓ Best Time</div>
+          <div class="season-name">Autumn</div>
+          <div class="season-months">Sep – Nov</div>
+          <div class="season-desc">Golden rice terraces, clear skies, cool weather — peak season.</div>
+        </div>
+        <div class="season-item">
+          <div class="season-name">Winter</div>
+          <div class="season-months">Dec – Feb</div>
+          <div class="season-desc">Cold &amp; foggy. Rare snow possible. Minimal crowds.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOD & DINING -->
+    <div class="detail-section reveal">
+      <div class="section-header">
+        <div class="section-eyebrow">Culinary Experience</div>
+        <h2 class="section-h2">Local Food & Dining</h2>
+      </div>
+      <div class="food-grid" id="food-grid">
+        <div class="food-card">
+          <div class="food-img">🐑</div>
+          <div class="food-info">
+            <div class="food-name">Thắng Cố</div>
+            <p class="food-desc">A traditional stew from the Hmong people, made with horse meat and vegetables. A true
+              highland delicacy.</p>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-img">🐟</div>
+          <div class="food-info">
+            <div class="food-name">Grilled Salmon</div>
+            <p class="food-desc">Fresh Sa Pa salmon grilled over charcoal with local herbs. The cold mountain streams
+              produce exceptionally flavored fish.</p>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-img">🍵</div>
+          <div class="food-info">
+            <div class="food-name">Rượu Ngô (Corn Wine)</div>
+            <p class="food-desc">Locally brewed corn liquor with a distinctive smoky, sweet flavor. A traditional drink
+              shared during ceremonies and festivals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BACK / NEXT NAV -->
+  <div class="back-section">
+    <a href="destinations.html" class="btn-back" id="btn-back-bottom">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+      </svg>
+      Back to Map
+    </a>
+    <div class="next-dest">
+      <div>
+        <div class="next-label">Next Destination</div>
+        <div class="next-name" id="next-dest-name">—</div>
+      </div>
+      <a href="#" class="btn-next" id="btn-next-dest">
+        Explore
+        <svg viewBox="0 0 24 24">
+          <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">ETOURISMGR4</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 ETOURISMGR4</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="reviews.js"></script>
+  <script>
+    // ===== DESTINATIONS DATA =====
+    const DESTINATIONS = {
+      'sapa': {
+        title: 'Sa Pa',
+        tagline: '"Where clouds touch the mountaintops"',
+        region: 'Northern Vietnam',
+        regionColor: '#059669',
+        heroImg: 'assets/images/destinations/north/sapa/sapa5.jpg',
+        gallery: [
+          { src: 'assets/images/destinations/north/sapa/sapa3.jpg', label: 'Village & Fansipan' },
+          { src: 'assets/images/destinations/north/sapa/sapa2.jpg', label: 'Mountain Mist' },
+          { src: 'assets/images/destinations/north/sapa/sapa4.jpg', label: 'Rice Terraces' },
+          { src: 'assets/images/destinations/north/sapa/sapa6.jpg', label: 'Local Life' },
+          { src: 'assets/images/destinations/north/sapa/sapa7.jpg', label: 'Hill Tribe Culture' },
+        ],
+        location: 'Lào Cai Province',
+        season: 'Sep – Nov',
+        highlight: 'Fansipan Peak',
+        about1: 'For many people, Sapa is the ultimate symbol of Vietnam\'s mountainous northwest. Trails wind through towering peaks and plunge into deep valleys carved by spectacular, cascading rice terraces. Along the way, visitors can stop at remote villages to explore and admire the vibrant cultures of ethnic minority groups who have lived here for generations.',
+        about2: 'The region\'s mysterious and breathtaking beauty has made it a must-visit destination, yet it still offers quiet, hidden corners in distant hamlets for those seeking a more peaceful experience.',
+        highlights: [
+          { icon: 'mountain', title: 'Fansipan Peak', desc: 'The "Roof of Indochina" at 3,143m. Take the cable car or challenge yourself with a multi-day trek through pristine cloud forests.' },
+          { icon: 'map', title: 'Muong Hoa Valley', desc: 'Stunning terraced rice fields stretching between Lao Chai and Ta Van villages. Best during Sep–Nov golden harvest season.' },
+          { icon: 'people', title: 'Ethnic Village Trek', desc: 'Walk through Black Hmong and Red Dao villages like Cát Cát, Lao Chai, and Ta Van to experience traditional highland culture.' },
+        ],
+        seasons: [
+          { name: 'Spring', months: 'Mar – May', desc: 'Warm with blooming flowers. Good trekking. Occasional rain.', best: false },
+          { name: 'Summer', months: 'Jun – Aug', desc: 'Rainy season. Terraces fill with water — lush and green but slippery trails.', best: false },
+          { name: 'Autumn', months: 'Sep – Nov', desc: 'Golden rice terraces, clear skies, cool weather — peak season.', best: true },
+          { name: 'Winter', months: 'Dec – Feb', desc: 'Cold & foggy. Rare snow possible. Minimal crowds.', best: false },
+        ],
+        food: [
+          { emoji: '🐑', name: 'Thắng Cố', desc: 'A traditional Hmong stew made with horse meat and vegetables. A true highland delicacy shared at local markets.' },
+          { emoji: '🐟', name: 'Cá Hồi Nướng', desc: 'Fresh Sa Pa salmon grilled over charcoal with local herbs. Cold mountain streams produce exceptionally flavored fish.' },
+          { emoji: '🍵', name: 'Rượu Ngô', desc: 'Locally brewed corn wine with a distinctive smoky, sweet flavor — a traditional drink shared during festivals.' },
+        ],
+        nextId: 'ha-long-bay',
+        nextName: 'Hạ Long Bay',
+      },
+
+      'ha-long-bay': {
+        title: 'Hạ Long Bay',
+        tagline: '"Where limestone giants rise from an emerald sea"',
+        region: 'Northern Vietnam',
+        regionColor: '#059669',
+        heroImg: 'assets/images/destinations/north/ha-long-bay/vịnh hạ long 1.jpg',
+        gallery: [
+          { src: 'assets/images/destinations/north/ha-long-bay/vịnh hạ long 2.jpg', label: 'Limestone Karsts' },
+          { src: 'assets/images/destinations/north/ha-long-bay/vịnh hạ long 3.jpg', label: 'Cruise Boats' },
+          { src: 'assets/images/destinations/north/ha-long-bay/vịnh hạ long 4.jpg', label: 'Island Caves' },
+          { src: 'assets/images/destinations/north/ha-long-bay/vịnh hạ long 1.jpg', label: 'Aerial View' },
+        ],
+        location: 'Quảng Ninh Province',
+        season: 'Sep – Nov',
+        highlight: 'UNESCO World Heritage',
+        about1: 'For many people, Ha Long Bay is almost a symbol of Vietnam. Cruise boats glide across the emerald waters, weaving through thousands of limestone islands and islets with unique shapes. Along the way, they stop at stunning caves where visitors can explore impressive rock formations that have developed over hundreds of years.',
+        about2: 'The bay\'s mysterious and breathtaking beauty has made it a must-visit destination, yet it still offers quiet, hidden corners for those seeking a more peaceful experience. Ha Long Bay is also home to fishing communities that have lived on the water for generations.',
+        highlights: [
+          { icon: 'boat', title: 'Bay Cruise', desc: 'Watch the sunset over calm waters and wake up to a peaceful morning surrounded by towering karsts. The ultimate Ha Long experience.' },
+          { icon: 'cave', title: 'Cave Exploration', desc: 'Hidden beneath limestone mountains are caves formed by natural erosion. Some narrow and adventurous, others vast and breathtaking.' },
+          { icon: 'kayak', title: 'Kayaking & Village', desc: 'Kayak through serene lagoons at sunset, then take a boat tour around floating villages for a unique glimpse into water life.' },
+        ],
+        seasons: [
+          { name: 'Spring', months: 'Apr – May', desc: 'Sunshine and gentle breeze — great visibility and comfortable temperatures.', best: false },
+          { name: 'Summer', months: 'Jun – Aug', desc: 'Rainy season. Travel plans can be less predictable due to storms.', best: false },
+          { name: 'Autumn', months: 'Sep – Nov', desc: 'Cool weather, clear skies — the ideal time to cruise the bay.', best: true },
+          { name: 'Winter', months: 'Dec – Mar', desc: 'Mist often covers the bay, creating a mysterious, ethereal atmosphere.', best: false },
+        ],
+        food: [
+          { emoji: '🦞', name: 'Hải Sản Tươi Sống', desc: 'Fresh seafood straight from the bay — grilled squid, steamed clams, and whole fish are staples on every cruise menu.' },
+          { emoji: '🍜', name: 'Chả Mực Hạ Long', desc: 'Ha Long\'s famous squid cake, made from fresh squid pounded with spices and fried to golden perfection.' },
+          { emoji: '🥘', name: 'Sam Biển', desc: 'Horseshoe crab, a local delicacy cooked in various styles. Best enjoyed fresh on the cruise boat.' },
+        ],
+        nextId: 'ninh-binh',
+        nextName: 'Ninh Bình',
+      },
+
+      'ninh-binh': {
+        title: 'Ninh Bình',
+        tagline: '"Ha Long Bay on land — where mountains meet rivers"',
+        region: 'Northern Vietnam',
+        regionColor: '#059669',
+        heroImg: 'assets/images/destinations/north/ninh-binh/ninhbinh1.jpg',
+        gallery: [
+          { src: 'assets/images/destinations/north/ninh-binh/ninhbinh2.jpg', label: 'Tràng An Caves' },
+          { src: 'assets/images/destinations/north/ninh-binh/ninhbinh3.jpg', label: 'Tam Cốc Rice Fields' },
+          { src: 'assets/images/destinations/north/ninh-binh/ninhbinh4.jpg', label: 'Hang Múa Summit' },
+          { src: 'assets/images/destinations/north/ninh-binh/ninhbinh5.jpg', label: 'Bái Đính Pagoda' },
+        ],
+        location: 'Ninh Bình Province',
+        season: 'Apr – Jun',
+        highlight: 'Tràng An UNESCO Site',
+        about1: 'Ninh Bình is often referred to as "Ha Long Bay on land" thanks to its dramatic limestone karst landscapes and tranquil waterways. Towering mountains rise from emerald rivers and vast rice fields stretch endlessly across the countryside, creating one of Vietnam\'s most scenic regions.',
+        about2: 'Unlike the fast-paced atmosphere of major cities, Ninh Bình embraces a peaceful and authentic charm. From ancient temples and sacred pagodas to quiet rural villages, the region reflects a unique intersection of history, spirituality, and nature — perfect for those seeking to escape urban life.',
+        highlights: [
+          { icon: 'boat', title: 'Tràng An & Tam Cốc', desc: 'Glide by boat through the UNESCO-listed Tràng An complex or drift along the Tam Cốc river surrounded by golden rice fields and dramatic cliffs.' },
+          { icon: 'mountain', title: 'Hang Múa Summit', desc: 'Climb 500 stone steps to the top of Hang Múa for a breathtaking panoramic view of the entire karst landscape.' },
+          { icon: 'temple', title: 'Hoa Lư & Bái Đính', desc: 'Explore Hoa Lư Ancient Capital, Vietnam\'s first capital, then marvel at Bái Đính — one of Southeast Asia\'s largest Buddhist complexes.' },
+        ],
+        seasons: [
+          { name: 'Spring', months: 'Jan – Mar', desc: 'Cool and pleasant. Great for sightseeing and traditional festivals.', best: false },
+          { name: 'Early Summer', months: 'Apr – Jun', desc: 'Rice fields turn brilliant golden. The most picturesque time of year.', best: true },
+          { name: 'Summer', months: 'Jul – Aug', desc: 'Hot and sometimes rainy. Still beautiful but less comfortable.', best: false },
+          { name: 'Autumn', months: 'Sep – Nov', desc: 'Mild climate, fewer crowds. Peaceful and relaxing experience.', best: false },
+        ],
+        food: [
+          { emoji: '🐐', name: 'Thịt Dê Núi', desc: 'Ninh Bình\'s signature goat meat, raised on limestone mountains. Grilled, steamed, or served in a hot pot — exceptionally tender and flavorful.' },
+          { emoji: '🍚', name: 'Cơm Cháy', desc: 'Crispy scorched rice served with rich pork or mushroom sauce. A beloved local specialty unique to Ninh Bình.' },
+          { emoji: '🐟', name: 'Cá Rô Đồng', desc: 'Fresh-caught field fish braised in clay pots with lemongrass and galangal. A true taste of rural Mekong cooking in the north.' },
+        ],
+        nextId: 'phong-nha',
+        nextName: 'Phong Nha – Kẻ Bàng',
+      },
+
+      'phong-nha': {
+        title: 'Phong Nha – Kẻ Bàng',
+        tagline: '"Underground kingdoms beneath an ancient jungle"',
+        region: 'Central Vietnam',
+        regionColor: '#0284C7',
+        heroImg: 'assets/images/destinations/central/phong-nha/phongnha1.jpg',
+        gallery: [
+          { src: 'assets/images/destinations/central/phong-nha/phongnha2.jpg', label: 'Phong Nha Cave' },
+          { src: 'assets/images/destinations/central/phong-nha/phongnha3.jpg', label: 'Paradise Cave' },
+          { src: 'assets/images/destinations/central/phong-nha/phongnha4.jpg', label: 'Son Doong Expedition' },
+          { src: 'assets/images/destinations/central/phong-nha/phongnha5.jpg', label: 'Jungle Trekking' },
+        ],
+        location: 'Quảng Bình Province',
+        season: 'Feb – Aug',
+        highlight: 'Son Doong — World\'s Largest Cave',
+        about1: 'Phong Nha – Kẻ Bàng National Park represents the wild and untouched beauty of central Vietnam. Known for its dramatic limestone mountains, dense tropical forests, and one of the world\'s most impressive cave systems, this UNESCO World Heritage Site offers a sense of adventure and discovery unlike anywhere else.',
+        about2: 'Beneath the surface lies a hidden world of underground rivers, vast caverns, and unique rock formations shaped over millions of years. Despite its growing popularity, Phong Nha still maintains a peaceful atmosphere, making it perfect for nature lovers and explorers seeking something extraordinary.',
+        highlights: [
+          { icon: 'cave', title: 'Phong Nha & Paradise Caves', desc: 'A boat ride along the Son River leads into Phong Nha Cave\'s stunning interior. Paradise Cave features enormous chambers with wooden walkways for easy exploration.' },
+          { icon: 'mountain', title: 'Son Doong Cave Expedition', desc: 'The world\'s largest cave — an epic multi-day adventure with jungle, underground rivers, and its very own ecosystem. A once-in-a-lifetime experience.' },
+          { icon: 'kayak', title: 'Kayaking & Jungle Treks', desc: 'Paddle through crystal-clear rivers surrounded by lush greenery, or join guided treks that reveal diverse wildlife and hidden waterfalls.' },
+        ],
+        seasons: [
+          { name: 'Dry Season', months: 'Feb – Aug', desc: 'Warm and dry — ideal for cave exploration and outdoor activities.', best: true },
+          { name: 'Early Rainy', months: 'Sep – Nov', desc: 'Heavy rains may cause flooding in some caves. Check before visiting.', best: false },
+          { name: 'Cool Season', months: 'Dec – Jan', desc: 'Cooler and comfortable for trekking, though slightly chilly.', best: false },
+          { name: 'Peak Dry', months: 'Mar – May', desc: 'Perfect conditions. Best time for Son Doong and jungle expeditions.', best: false },
+        ],
+        food: [
+          { emoji: '🐷', name: 'Lợn Mán Nướng', desc: 'Local mountain pig slow-grilled over wood fire with lemongrass and herbs. A beloved staple in Phong Nha village restaurants.' },
+          { emoji: '🍲', name: 'Cháo Canh Quảng Bình', desc: 'A thick, comforting rice porridge with shrimp and pork unique to Quảng Bình. Warming after a long day exploring caves.' },
+          { emoji: '🐟', name: 'Cá Nướng Suối', desc: 'Fresh stream fish grilled whole over charcoal with local spices. Simple, smoky, and delicious.' },
+        ],
+        nextId: 'hue',
+        nextName: 'Cố Đô Huế',
+      },
+
+      'hue': {
+        title: 'Huế',
+        tagline: '"The Imperial City — where history whispers in every stone"',
+        region: 'Central Vietnam',
+        regionColor: '#0284C7',
+        heroImg: 'assets/images/destinations/central/hue/hue1.jpg',
+        gallery: [
+          { src: 'assets/images/destinations/central/hue/hue2.jpg', label: 'Imperial Citadel' },
+          { src: 'assets/images/destinations/central/hue/hue3.jpg', label: 'Perfume River' },
+          { src: 'assets/images/destinations/central/hue/hue4.jpg', label: 'Thien Mu Pagoda' },
+          { src: 'assets/images/destinations/central/hue/hue5.jpg', label: 'Royal Tombs' },
+        ],
+        location: 'Thừa Thiên Huế Province',
+        season: 'Feb – Apr',
+        highlight: 'UNESCO Imperial Citadel',
+        about1: 'Huế, located in Central Vietnam, is widely recognized as the country\'s "Ancient Capital" — a land steeped in deep historical roots and imperial grandeur. The tranquil Perfume River flows past majestic tombs and ancient pagodas, creating a harmonious blend of poetic natural beauty and centuries-old cultural heritage.',
+        about2: 'Unlike the high-energy pace of modern metropolises, Huế embraces a nostalgic and romantic charm. From its moss-covered citadel walls to traditional craft villages specializing in bronze casting and conical hats, the region reflects a unique intersection of history and a slow-paced lifestyle that captivates every visitor.',
+        highlights: [
+          { icon: 'temple', title: 'Imperial Citadel & Monuments', desc: 'Explore the UNESCO-listed Complex of Hue Monuments — grand palaces and temples of Vietnam\'s last feudal Nguyen dynasty.' },
+          { icon: 'boat', title: 'Perfume River Dragon Boat', desc: 'A sunset dragon boat journey along the Perfume River to Thien Mu Pagoda is one of Vietnam\'s most iconic and romantic experiences.' },
+          { icon: 'mountain', title: 'Royal Tombs', desc: 'Marvel at the intricate architecture and sophisticated feng shui of imperial tombs — Minh Mang, Tu Duc, and Khai Dinh are unmissable.' },
+        ],
+        seasons: [
+          { name: 'Spring', months: 'Feb – Apr', desc: 'Cool and mild — perfect for sightseeing. Ngô Đồng flowers in bloom.', best: true },
+          { name: 'Summer', months: 'May – Jul', desc: 'Hot and dry. Hue Festival takes place in even-numbered years.', best: false },
+          { name: 'Autumn', months: 'Sep – Nov', desc: 'Romantic seasonal rains create a melancholic, beautiful atmosphere.', best: false },
+          { name: 'Winter', months: 'Dec – Jan', desc: 'Cool and occasionally rainy. Quieter season with fewer tourists.', best: false },
+        ],
+        food: [
+          { emoji: '🍜', name: 'Bún Bò Huế', desc: 'Spicy beef noodle soup with lemongrass and shrimp paste — Huế\'s most famous dish, bold and aromatic. A must-try at every meal.' },
+          { emoji: '🍚', name: 'Cơm Hến', desc: 'Baby clam rice with a complex mix of toppings and sauces. A humble yet refined dish reflecting the meticulous nature of Hue cuisine.' },
+          { emoji: '🍜', name: 'Bánh Bèo, Nậm, Lọc', desc: 'Delicate steamed rice cakes with shrimp and pork fillings. These bite-sized royal delicacies are the essence of Hue\'s culinary art.' },
+        ],
+        nextId: 'da-nang',
+        nextName: 'Đà Nẵng',
+      },
+
+      'da-nang': {
+        title: 'Đà Nẵng',
+        tagline: '"Where the mountains meet the sea — Vietnam\'s rising star"',
+        region: 'Central Vietnam',
+        regionColor: '#0284C7',
+        heroImg: 'assets/images/destinations/central/da-nang/da_nang6.jpg',
+        gallery: [
+          { src: 'assets/images/destinations/central/da-nang/da_nang2.jpg', label: 'Dragon Bridge' },
+          { src: 'assets/images/destinations/central/da-nang/da_nang3.jpg', label: 'Golden Bridge' },
+          { src: 'assets/images/destinations/central/da-nang/da_nang4.jpg', label: 'My Khe Beach' },
+          { src: 'assets/images/destinations/central/da-nang/da_nang5.jpg', label: 'Son Tra Peninsula' },
+        ],
+        location: 'Đà Nẵng City',
+        season: 'Feb – Aug',
+        highlight: 'Golden Bridge & Ba Na Hills',
+        about1: 'Da Nang is widely celebrated as Vietnam\'s "most livable city," strategically located where majestic mountains, fertile plains, and the blue sea converge. In 2026, the city enters a transformative era as a Global Heritage and Technology Hub following its historic merger with Quảng Nam province.',
+        about2: 'The vibe of Da Nang is a seamless blend of grand modern infrastructure and rugged natural beauty — from the shimmering Han River to the pristine forests of Son Tra Peninsula. Visitors are drawn here to witness a city evolving rapidly, where cutting-edge smart tourism meets the timeless charm of surrounding UNESCO World Heritage sites.',
+        highlights: [
+          { icon: 'bridge', title: 'Iconic Bridges & Ba Na Hills', desc: 'The Dragon Bridge breathes fire on weekends, while the world-famous Golden Bridge — held by giant stone hands — offers incredible views at Ba Na Hills.' },
+          { icon: 'beach', title: 'My Khe Beach & Water Sports', desc: 'One of the world\'s most beautiful beaches. Surf, SUP paddle, or paraglide along the 30km stretch of pristine white sand.' },
+          { icon: 'temple', title: 'Lady Buddha & Cham Museum', desc: 'Visit the 67m Lady Buddha statue at Linh Ung Pagoda, then explore the world\'s largest collection of Cham artifacts at the Sculpture Museum.' },
+        ],
+        seasons: [
+          { name: 'Pleasant', months: 'Feb – Apr', desc: 'Cool and comfortable (22°C–28°C). Best for sightseeing and heritage tours.', best: false },
+          { name: 'Peak', months: 'May – Aug', desc: 'Hot and sunny — perfect for beaches. Hosts the International Fireworks Festival (DIFF 2026).', best: true },
+          { name: 'Rainy', months: 'Sep – Dec', desc: 'Rainfall increases. Avoid Oct–Nov: peak storm and flood season.', best: false },
+          { name: 'New Year', months: 'Jan', desc: 'Quiet but pleasant. Good for exploring the city without crowds.', best: false },
+        ],
+        food: [
+          { emoji: '🍜', name: 'Mì Quảng', desc: 'Turmeric-tinted noodles with pork, shrimp, and herbs served with minimal broth and crispy rice crackers. A Da Nang icon.' },
+          { emoji: '🥖', name: 'Bánh Mì Đà Nẵng', desc: 'Da Nang\'s take on the Vietnamese sandwich — stuffed with grilled pork, pickled vegetables, and fresh herbs. Simple, bold, and unforgettable.' },
+          { emoji: '🦐', name: 'Bún Chả Cá', desc: 'Fish cake noodle soup unique to Da Nang. Light, savory broth with bouncy fried fish cakes and fresh herbs.' },
+        ],
+        nextId: 'ho-chi-minh-city',
+        nextName: 'TP. Hồ Chí Minh',
+      },
+
+      'ho-chi-minh-city': {
+        title: 'TP. Hồ Chí Minh',
+        tagline: '"The city that never sleeps — pulse of the South"',
+        region: 'Southern Vietnam',
+        regionColor: '#DC2626',
+        heroImg: 'assets/images/destinations/south/ho-chi-minh/saigon1.jpg',
+        gallery: [
+          { src: 'assets/images/destinations/south/ho-chi-minh/saigon2.jpg', label: 'Nguyen Hue Walking Street' },
+          { src: 'assets/images/destinations/south/ho-chi-minh/saigon3.jpg', label: 'Notre-Dame Cathedral' },
+          { src: 'assets/images/destinations/south/ho-chi-minh/saigon4.jpg', label: 'Ben Thanh Market' },
+          { src: 'assets/images/destinations/south/ho-chi-minh/saigon5.jpg', label: 'City Skyline' },
+        ],
+        location: 'Ho Chi Minh City',
+        season: 'Dec – Apr',
+        highlight: 'Cu Chi Tunnels & War Museum',
+        about1: 'Ho Chi Minh City is Vietnam\'s largest and most dynamic urban center. Known for its fast-paced lifestyle and vibrant atmosphere, the city represents a fascinating blend of tradition and modernity — skyscrapers rise alongside colonial-era buildings, while bustling markets coexist with high-end malls and trendy cafés.',
+        about2: 'From the constant flow of motorbikes on busy streets to the relaxed vibe of hidden alley cafés, the city offers a unique energy that is both chaotic and captivating. It is an ideal destination for travelers who want to explore a modern Asian city while still connecting with local culture and history.',
+        highlights: [
+          { icon: 'history', title: 'War Remnants & Cu Chi Tunnels', desc: 'The War Remnants Museum offers a powerful look into Vietnam\'s past, while Cu Chi Tunnels let you explore the underground network used during wartime.' },
+          { icon: 'building', title: 'Colonial Landmarks', desc: 'Notre-Dame Cathedral, the historic Central Post Office, and Bitexco Financial Tower showcase the city\'s layered architectural heritage.' },
+          { icon: 'food', title: 'Night Street Food & City Tour', desc: 'Join a night street food tour tasting banh mi, bun bo, and Vietnamese iced coffee, or hop on the double-decker city bus for a full city overview.' },
+        ],
+        seasons: [
+          { name: 'Dry Season', months: 'Dec – Apr', desc: 'Sunny and warm (25°C–35°C) with minimal rainfall. Best time to visit.', best: true },
+          { name: 'Early Rain', months: 'May – Jun', desc: 'Short afternoon showers begin. City remains lively and vibrant.', best: false },
+          { name: 'Rainy Peak', months: 'Jul – Oct', desc: 'Intense afternoon showers. Fewer crowds and lower travel costs.', best: false },
+          { name: 'Tet Season', months: 'Jan – Feb', desc: 'Lunar New Year festivities transform the city with decorations and events.', best: false },
+        ],
+        food: [
+          { emoji: '🥖', name: 'Bánh Mì Sài Gòn', desc: 'The Saigon-style bánh mì — overflowing with fillings, crispy baguette, and bold flavors. Grab one from a street cart for the full experience.' },
+          { emoji: '🍜', name: 'Bún Bò Nam Bộ', desc: 'Southern-style vermicelli bowl with grilled lemongrass beef, fresh herbs, and crunchy peanuts tossed in a sweet-savory sauce.' },
+          { emoji: '☕', name: 'Cà Phê Sữa Đá', desc: 'Vietnamese iced coffee with condensed milk — strong, sweet, and unapologetically bold. The city\'s most beloved daily ritual.' },
+        ],
+        nextId: 'can-tho',
+        nextName: 'Cần Thơ',
+      },
+
+      'can-tho': {
+        title: 'Cần Thơ',
+        tagline: '"Heart of the Mekong Delta — where rivers tell their stories"',
+        region: 'Southern Vietnam',
+        regionColor: '#DC2626',
+        heroImg: 'assets/images/destinations/south/can-tho/cantho1.jpg',
+        gallery: [
+          { src: 'assets/images/destinations/south/can-tho/cantho2.jpg', label: 'Cai Rang Floating Market' },
+          { src: 'assets/images/destinations/south/can-tho/cantho3.jpg', label: 'Mekong Canal' },
+          { src: 'assets/images/destinations/south/can-tho/cantho4.jpg', label: 'Riverside Life' },
+          { src: 'assets/images/destinations/south/can-tho/cantho5.jpg', label: 'Fruit Orchards' },
+        ],
+        location: 'Cần Thơ City',
+        season: 'Dec – Apr',
+        highlight: 'Cái Răng Floating Market',
+        about1: 'At first sight, Can Tho appears lively and dynamic, where daily trade unfolds along the vast Hau River. But beyond its energetic urban rhythm lies a slower, more intimate side of life — staying along shaded riverbanks, enjoying freshly harvested tropical fruits, tasting local fish dishes, or drifting through narrow canals by sampan reveals a completely different atmosphere.',
+        about2: 'Visitors soon discover that the city\'s modern image is only one layer. The true charm of Can Tho is found in its peaceful mornings, relaxed afternoons in garden hammocks, and tranquil evenings filled with the sounds of nature beneath the bright skies of the Mekong Delta.',
+        highlights: [
+          { icon: 'boat', title: 'Cái Răng Floating Market', desc: 'A trip to Can Tho is incomplete without witnessing the famous floating market come alive at dawn — boats piled with fresh produce and local specialties.' },
+          { icon: 'map', title: 'Mekong Islets & Canals', desc: 'Travel by bicycle or sampan through quiet villages and fruit orchards on the islets. Join a homestay for a home-cooked meal with local families.' },
+          { icon: 'building', title: 'Bình Thủy Ancient House', desc: 'A beautifully preserved 19th-century residence blending Eastern and Western architecture, showcasing how wealthy Mekong families once lived.' },
+        ],
+        seasons: [
+          { name: 'Dry Season', months: 'Dec – Apr', desc: 'Hot but comfortable. Ideal for outdoor activities and floating markets.', best: true },
+          { name: 'Early Rain', months: 'May – Jun', desc: 'Showers begin. Canals fill with water — lush and beautiful scenery.', best: false },
+          { name: 'Rainy Peak', months: 'Jul – Oct', desc: 'Frequent showers. Mekong Delta is at its most lush and green.', best: false },
+          { name: 'Late Dry', months: 'Nov', desc: 'Transitional weather. Good conditions for travel begin to return.', best: false },
+        ],
+        food: [
+          { emoji: '🍜', name: 'Hủ Tiếu Trên Sông', desc: 'Breakfast on the river — fresh hủ tiếu noodles with pork, bean sprouts, and light broth, served hot right from a floating vendor boat.' },
+          { emoji: '🐟', name: 'Lẩu Mắm', desc: 'Fermented fish hot pot with an array of fresh vegetables, fish, and pork. A bold, deeply flavorful Mekong Delta specialty.' },
+          { emoji: '🍑', name: 'Trái Cây Nhiệt Đới', desc: 'Freshly picked tropical fruits straight from orchards — durian, rambutan, longan, and mangosteen at their ripest and sweetest.' },
+        ],
+        nextId: 'phu-quoc',
+        nextName: 'Phú Quốc',
+      },
+
+      'phu-quoc': {
+        title: 'Phú Quốc',
+        tagline: '"The Pearl Island — Vietnam\'s tropical paradise"',
+        region: 'Southern Vietnam',
+        regionColor: '#DC2626',
+        heroImg: 'assets/images/destinations/south/phu-quoc/phuquoc1.jpg',
+        gallery: [
+          { src: 'assets/images/destinations/south/phu-quoc/phuquoc2.jpg', label: 'Bãi Sao Beach' },
+          { src: 'assets/images/destinations/south/phu-quoc/phuquoc3.jpg', label: 'Sunset Town' },
+          { src: 'assets/images/destinations/south/phu-quoc/phuquoc4.jpg', label: 'Hòn Thơm Cable Car' },
+          { src: 'assets/images/destinations/south/phu-quoc/phuquoc5.jpg', label: 'Island Snorkeling' },
+        ],
+        location: 'Kiên Giang Province',
+        season: 'Nov – Apr',
+        highlight: 'World\'s Longest Over-Water Cable Car',
+        about1: 'Phú Quốc, Vietnam\'s largest island nestled in the Gulf of Thailand, is affectionately known as the "Pearl Island" for its pristine and captivating natural beauty. It offers a seamless blend of absolute relaxation and exhilarating exploration — powdery white sands, turquoise waters, and a diverse primeval forest ecosystem.',
+        about2: 'From world-class luxury resorts in the south to rustic ancient fishing villages, the island represents a unique intersection of modern opulence and authentic local heritage. It is the ultimate destination for those seeking a holistic getaway — whether indulging in tranquil spaces or engaging in international-scale entertainment.',
+        highlights: [
+          { icon: 'beach', title: 'Island Hopping & Snorkeling', desc: 'Take a speedboat tour of the "Four Islands" combining snorkeling in clear waters. The world\'s longest over-water cable car to Hòn Thơm is unmissable.' },
+          { icon: 'building', title: 'VinWonders & Vinpearl Safari', desc: 'Families will find a haven at VinWonders entertainment complex and Vinpearl Safari — a semi-wild conservation park home to hundreds of species.' },
+          { icon: 'map', title: 'Night Market & Sunset Cocktails', desc: 'The Phú Quốc Night Market in Dương Đông offers fresh seafood and local pearls. End the day with a cocktail at a beachfront bar watching the island\'s legendary sunset.' },
+        ],
+        seasons: [
+          { name: 'Dry Season', months: 'Nov – Apr', desc: 'Calm seas, crystal-clear water, golden sunshine. Peak travel season.', best: true },
+          { name: 'Early Rain', months: 'May – Jun', desc: 'Occasional afternoon showers. Lush forests, fewer crowds, lower prices.', best: false },
+          { name: 'Rainy Peak', months: 'Jul – Sep', desc: 'Frequent rains. Waterfalls and forests at their most spectacular.', best: false },
+          { name: 'Transition', months: 'Oct', desc: 'Rains tapering off. Good value travel as dry season approaches.', best: false },
+        ],
+        food: [
+          { emoji: '🥗', name: 'Gỏi Cá Trích', desc: 'Phú Quốc\'s iconic herring salad with coconut, herbs, and crunchy toppings. Fresh from the sea and bursting with flavor.' },
+          { emoji: '🌶️', name: 'Hải Sản & Tiêu Xanh', desc: 'Grilled seafood with the island\'s aromatic fresh green peppercorns — a combination exclusive to Phú Quốc\'s fertile pepper gardens.' },
+          { emoji: '🍵', name: 'Rượu Sim', desc: 'Sim wine made from wild rose myrtle berries — a signature Phú Quốc specialty with a gentle, fruity sweetness unique to the island.' },
+        ],
+        nextId: 'sapa',
+        nextName: 'Sa Pa',
+      },
+    };
+
+    // ===== LOAD DESTINATION =====
+    const params = new URLSearchParams(window.location.search);
+    const destId = params.get('id') || 'sapa';
+    const dest = DESTINATIONS[destId] || DESTINATIONS['sapa'];
+
+    // Update meta
+    document.title = dest.title + ' — Vietnam Destinations';
+
+    // Update about section title
+    const aboutTitles = {
+      'sapa': 'A World Above the Clouds',
+      'ha-long-bay': 'An Emerald Kingdom of Limestone',
+      'ninh-binh': 'Ha Long Bay on Land',
+      'phong-nha': 'An Underground World Awaits',
+      'hue': 'The Ancient Imperial Capital',
+      'da-nang': 'Vietnam\'s Most Livable City',
+      'ho-chi-minh-city': 'The City That Never Sleeps',
+      'can-tho': 'Heart of the Mekong Delta',
+      'phu-quoc': 'The Pearl Island Paradise',
+    };
+    if (document.getElementById('about-title')) {
+      document.getElementById('about-title').textContent = aboutTitles[destId] || dest.title;
+    }
+
+    // Update hero image
+    const heroWrap = document.getElementById('hero-img-wrap');
+    heroWrap.style.cssText = 'position:absolute;inset:0;overflow:hidden;';
+    heroWrap.innerHTML = `<img src="${dest.heroImg}" alt="${dest.title} hero photo"
+      style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
+      loading="eager">`;
+
+    // Update text content
+    document.getElementById('dest-title').textContent = dest.title;
+    document.getElementById('dest-tagline').textContent = dest.tagline;
+    document.getElementById('region-tag').textContent = dest.region;
+    document.getElementById('region-tag').style.background = dest.regionColor + 'cc';
+    document.getElementById('qi-location').textContent = dest.location;
+    document.getElementById('qi-season').textContent = dest.season;
+    document.getElementById('qi-highlight').textContent = dest.highlight;
+
+    // Update gallery
+    const gallery = document.getElementById('photo-gallery');
+    gallery.innerHTML = dest.gallery.map((img, i) =>
+      `<div class="photo-item">
+        <img src="${img.src}" alt="${img.label}" loading="lazy">
+        <div class="photo-label">${img.label}</div>
+      </div>`
+    ).join('');
+
+    // Update next destination
+    document.getElementById('btn-next-dest').href = 'destination-detail.html?id=' + dest.nextId;
+    document.querySelector('.next-name') && (document.querySelector('.next-name').textContent = dest.nextName);
+    document.getElementById('next-dest-name') && (document.getElementById('next-dest-name').textContent = dest.nextName);
+
+    // Update breadcrumb
+    document.querySelector('.breadcrumb span:last-child') && (document.querySelector('.breadcrumb span:last-child').textContent = dest.title);
+
+    // Update about text
+    if (dest.about1) document.getElementById('about-text').textContent = dest.about1;
+    if (dest.about2) document.getElementById('about-text2').textContent = dest.about2;
+
+    // Update highlights
+    const iconSVGs = {
+      mountain: '<path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"/>',
+      boat: '<path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.65 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.48.26-.6.5s-.14.52-.06.78L3.95 19zM6 6h12v3.97L12 8 6 9.97V6z"/>',
+      cave: '<path d="M12 3L2 12h3v8h6v-5h2v5h6v-8h3L12 3zm0 12.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>',
+      kayak: '<path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>',
+      map: '<path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/>',
+      temple: '<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>',
+      people: '<path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>',
+      bridge: '<path d="M4 18H2v-7c0-2.76 2.24-5 5-5h10c2.76 0 5 2.24 5 5v7h-2v-3H4v3zm0-5h16v-2c0-1.65-1.35-3-3-3H7c-1.65 0-3 1.35-3 3v2z"/>',
+      beach: '<path d="M13.127 14.56l1.43-1.43 6.44 6.44-1.43 1.43zM17.42 8.83l2.86-2.86c-3.95-3.54-9.7-3.89-14.07-.96L7.5 6.26C10.76 4.43 14.86 4.81 17.42 8.83zM10.07 11.2l2.86-2.86c-1.86-1.86-4.58-2.45-7.06-1.56L7.5 8.47c1.5-.18 3.07.29 4.57 2.73zM4 20l3.5-3.5c-.45-.65-.7-1.44-.6-2.28L4 17.14V20zm2.5-8.5L3 15l2.12 2.12 3.5-3.5L7.5 12.5z"/>',
+      history: '<path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>',
+      building: '<path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5v-2h2v2zm4 4H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>',
+      food: '<path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1zm15.03-7c0-8-15.03-8-15.03 0h15.03zM1.02 17h15v2H1z"/>',
+    };
+    if (dest.highlights) {
+      document.getElementById('highlights-grid').innerHTML = dest.highlights.map(h => `
+        <div class="highlight-card">
+          <div class="highlight-icon-wrap">
+            <svg viewBox="0 0 24 24">${iconSVGs[h.icon] || iconSVGs['map']}</svg>
+          </div>
+          <div class="highlight-card-title">${h.title}</div>
+          <p class="highlight-card-desc">${h.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    // Update seasons
+    if (dest.seasons) {
+      document.getElementById('season-timeline').innerHTML = dest.seasons.map(s => `
+        <div class="season-item${s.best ? ' best' : ''}">
+          ${s.best ? '<div class="best-badge">✓ Best Time</div>' : ''}
+          <div class="season-name">${s.name}</div>
+          <div class="season-months">${s.months}</div>
+          <div class="season-desc">${s.desc}</div>
+        </div>
+      `).join('');
+    }
+
+    // Update food
+    if (dest.food) {
+      document.getElementById('food-grid').innerHTML = dest.food.map(f => `
+        <div class="food-card">
+          <div class="food-img">${f.emoji}</div>
+          <div class="food-info">
+            <div class="food-name">${f.name}</div>
+            <p class="food-desc">${f.desc}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ===== SCROLL REVEAL =====
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+</body>
+
+</html>

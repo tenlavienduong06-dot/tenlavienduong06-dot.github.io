@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vietnam Destinations — Discover the Beauty of Vietnam</title>
+  <meta name="description"
+    content="Explore Vietnam's most breathtaking destinations across three regions — North, Central, and South. Your guide to the hidden gems of Vietnam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ===== DESIGN TOKENS ===== */
+    :root {
+      --color-primary: #0EA5E9;
+      --color-primary-light: #38BDF8;
+      --color-primary-dark: #0284C7;
+      --color-accent: #F97316;
+      --color-accent-light: #FB923C;
+      --color-bg: #F0F9FF;
+      --color-bg-white: #FFFFFF;
+      --color-bg-dark: #0C4A6E;
+      --color-text-primary: #0C4A6E;
+      --color-text-secondary: #475569;
+      --color-text-muted: #94A3B8;
+      --color-text-white: #FFFFFF;
+      --color-border: #BAE6FD;
+      --color-north: #10B981;
+      --color-central: #F59E0B;
+      --color-south: #0EA5E9;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 12px rgba(14, 165, 233, 0.12);
+      --shadow-lg: 0 8px 32px rgba(14, 165, 233, 0.16);
+      --shadow-xl: 0 20px 60px rgba(12, 74, 110, 0.2);
+      --glass-bg: rgba(255, 255, 255, 0.72);
+      --glass-border: 1px solid rgba(186, 230, 253, 0.6);
+      --transition-base: 250ms ease;
+      --transition-slow: 400ms ease;
+      --nav-height: 72px;
+      --max-width: 1280px;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1200px;
+      height: var(--nav-height);
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: var(--glass-border);
+      border-radius: var(--radius-2xl);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 1000;
+      box-shadow: var(--shadow-md);
+      transition: box-shadow var(--transition-base);
+    }
+
+    .nav:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-xl);
+      transition: all var(--transition-base);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-primary);
+      background: rgba(14, 165, 233, 0.08);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      color: white !important;
+      padding: 0.6rem 1.4rem !important;
+      border-radius: var(--radius-xl) !important;
+      font-weight: 600 !important;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+      transition: all var(--transition-base) !important;
+    }
+
+    .nav-cta:hover {
+      background: linear-gradient(135deg, var(--color-primary-dark), #0369A1) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.45) !important;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #064E3B;
+    }
+
+    /* --- Video background --- */
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: #0C4A6E;
+      /* fallback color while video loads */
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Dark overlay so text stays readable */
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg,
+          rgba(12, 74, 110, 0.62) 0%,
+          rgba(3, 105, 161, 0.45) 50%,
+          rgba(14, 165, 233, 0.28) 100%);
+      z-index: 1;
+    }
+
+    /* Keep the subtle grid on top of video */
+    .hero-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+      padding-top: calc(var(--nav-height) + 3rem);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-full, 9999px);
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: white;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+      }
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--color-accent-light);
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-accent);
+      color: white;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.875rem 2rem;
+      border-radius: var(--radius-xl);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-accent-dark, #EA580C);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+    }
+
+    .btn-primary svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: white;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.875rem 2rem;
+      border-radius: var(--radius-xl);
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: all var(--transition-base);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-outline svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .stat-item {
+      color: white;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+      font-weight: 400;
+    }
+
+    /* ===== REGIONS SECTION ===== */
+    .regions {
+      padding: 6rem 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-tag::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.875rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--color-text-primary);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1.0625rem;
+      color: var(--color-text-secondary);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .region-card {
+      position: relative;
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 3/4;
+      transition: transform var(--transition-slow);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .region-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .region-card-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform var(--transition-slow);
+    }
+
+    .region-card:hover .region-card-bg {
+      transform: scale(1.06);
+    }
+
+    .region-card-bg.north {
+      background: linear-gradient(160deg, #047857 0%, #065F46 40%, #064E3B 100%);
+    }
+
+    .region-card-bg.north.has-photo {
+      background: none;
+    }
+
+    .region-card-bg.has-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform var(--transition-slow);
+    }
+
+    .region-card:hover .region-card-bg.has-photo img {
+      transform: scale(1.07);
+    }
+
+    .region-card-bg.central {
+      background: linear-gradient(160deg, #D97706 0%, #B45309 40%, #92400E 100%);
+    }
+
+    .region-card-bg.south {
+      background: linear-gradient(160deg, #0369A1 0%, #0C4A6E 40%, #082F49 100%);
+    }
+
+    /* Pattern overlay */
+    .region-card-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle cx='20' cy='20' r='1' fill='rgba(255,255,255,0.08)'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .region-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+      z-index: 1;
+    }
+
+    .region-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.75rem;
+      z-index: 2;
+    }
+
+    .region-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .region-name {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .region-destinations {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1rem;
+    }
+
+    .region-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: white;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all var(--transition-base);
+    }
+
+    .region-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .region-card:hover .region-link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .region-card-top {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 2;
+    }
+
+    .region-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.12);
+      line-height: 1;
+    }
+
+    /* ===== HIGHLIGHTS STRIP ===== */
+    .highlights {
+      background: var(--color-text-primary);
+      padding: 3.5rem 2rem;
+    }
+
+    .highlights-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      color: white;
+    }
+
+    .highlight-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .highlight-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--color-accent-light);
+    }
+
+    .highlight-title {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .highlight-desc {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+    }
+
+    /* ===== MAP CTA ===== */
+    .map-cta {
+      padding: 6rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .map-cta-inner {
+      max-width: 640px;
+    }
+
+    .map-cta .section-tag {
+      justify-content: center;
+    }
+
+    .map-cta .section-title {
+      margin: 0 auto 1rem;
+    }
+
+    .map-cta .section-desc {
+      margin: 0 auto 2rem;
+    }
+
+    .map-preview {
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+
+    /* Simplified VN map silhouette */
+    .map-preview-svg-wrap {
+      filter: drop-shadow(0 12px 40px rgba(14, 165, 233, 0.25));
+      transition: filter var(--transition-slow);
+    }
+
+    .map-preview-svg-wrap:hover {
+      filter: drop-shadow(0 16px 48px rgba(14, 165, 233, 0.38));
+    }
+
+    .map-pulse {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      top: 20%;
+      left: 38%;
+    }
+
+    .map-pulse::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 2px solid var(--color-accent);
+      animation: ripple 2s ease-out infinite;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0.8);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #051929;
+      padding: 3rem 2rem 2rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color var(--transition-base);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary-light);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+    }
+
+    /* ===== SCROLL ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .regions-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
+      .highlights-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .hero-stats {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo" id="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        </svg>
+      </div>
+      ETOURISMGR4
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="active" id="nav-home">Home</a></li>
+      <li><a href="destinations.html" id="nav-destinations">Destinations</a></li>
+      <li><a href="about.html" id="nav-about">About Us</a></li>
+      <li><a href="contact.html" id="nav-contact">Contact</a></li>
+    </ul>
+    <a href="destinations.html" class="nav-cta" id="nav-explore">Explore Map</a>
+    <div id="auth-nav-placeholder"></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-video-wrap">
+      <video src="assets/images/ui/video.mp4" autoplay muted loop playsinline preload="auto"></video>
+    </div>
+  </section>
+
+  <section class="hero-text" id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Discover the Soul<br>of <em>Vietnam</em>
+      </h1>
+      <p class="hero-desc">
+        Vietnam isn’t one single experience. It changes as you move, from the quiet, misty mountains of the North to the
+        deep cultural layers of the Central region, and down to the vibrant, ever-moving South. Each place feels
+        different, almost like stepping into another version of the same country.
+        This website is built from those contrasts. Not to overwhelm you with information, but to help you see the
+        character of each region, what makes it special, when to go, and what it feels like when you’re actually there.
+        Think of it less like a guide, and more like a starting point for your own journey across Vietnam.
+      </p>
+      <div class="hero-actions">
+        <a href="destinations.html" class="btn-primary" id="hero-cta-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+          </svg>
+          Explore Destinations
+        </a>
+        <a href="about.html" class="btn-outline" id="hero-cta-secondary">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z" />
+          </svg>
+          Our Story
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">9</div>
+          <div class="stat-label">Destinations</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Regions</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3,260</div>
+          <div class="stat-label">km Coastline</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGIONS -->
+  <section class="regions" id="regions">
+    <div class="reveal">
+      <div class="section-tag">Three Regions</div>
+      <h2 class="section-title">Explore by Region</h2>
+      <p class="section-desc">Vietnam stretches over 1,650km — each region offering a distinct landscape, culture, and
+        experience.</p>
+    </div>
+    <div class="regions-grid">
+      <!-- NORTH -->
+      <div class="region-card reveal" id="region-north" style="transition-delay: 0.1s"
+        onclick="window.location.href='destinations.html#north'">
+        <div class="region-card-bg north has-photo">
+          <img src="assets/images/destinations/north/sapa/sapa3.jpg"
+            alt="Sa Pa mountain village with Fansipan in the background" loading="lazy">
+        </div>
+        <div class="region-card-overlay"
+          style="background: linear-gradient(to top, rgba(4,82,60,0.88) 0%, rgba(4,82,60,0.35) 50%, rgba(4,82,60,0.1) 100%);">
+        </div>
+        <div class="region-card-top">
+          <div class="region-number">01</div>
+        </div>
+        <div class="region-card-content">
+          <div class="region-badge">Northern Region</div>
+          <div class="region-name">Miền Bắc</div>
+          <p class="region-destinations">Sa Pa · Ninh Bình · Hạ Long Bay</p>
+          <div class="region-link">
+            Explore North
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- CENTRAL -->
+      <div class="region-card reveal" id="region-central" style="transition-delay: 0.2s"
+        onclick="window.location.href='destinations.html#central'">
+        <div class="region-card-bg central has-photo">
+          <img src="assets/images/destinations/central/da-nang/da_nang6.jpg"
+            alt="Sa Pa mountain village with Fansipan in the background" loading="lazy">
+        </div>
+        <div class="region-card-overlay"
+          style="background: linear-gradient(to top, rgba(4,82,60,0.88) 0%, rgba(4,82,60,0.35) 50%, rgba(4,82,60,0.1) 100%);">
+        </div>
+        <div class="region-card-top">
+          <div class="region-number">02</div>
+        </div>
+        <div class="region-card-content">
+          <div class="region-badge">Central Region</div>
+          <div class="region-name">Miền Trung</div>
+          <p class="region-destinations">Cố đô Huế · Đà Nẵng · Phong Nha</p>
+          <div class="region-link">
+            Explore Central
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- SOUTH -->
+      <div class="region-card reveal" id="region-south" style="transition-delay: 0.3s"
+        onclick="window.location.href='destinations.html#south'">
+        <div class="region-card-bg south has-photo">
+          <img src="assets/images/destinations/south/phu-quoc/phuquoc1.jpg"
+            alt="Sa Pa mountain village with Fansipan in the background" loading="lazy">
+        </div>
+        <div class="region-card-overlay"
+          style="background: linear-gradient(to top, rgba(4,82,60,0.88) 0%, rgba(4,82,60,0.35) 50%, rgba(4,82,60,0.1) 100%);">
+        </div>
+        <div class="region-card-top">
+          <div class="region-number">03</div>
+        </div>
+        <div class="region-card-content">
+          <div class="region-badge">Southern Region</div>
+          <div class="region-name">Miền Nam</div>
+          <p class="region-destinations">TP.HCM · Phú Quốc · Cần Thơ</p>
+          <div class="region-link">
+            Explore South
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS STRIP -->
+  <section class="highlights" id="highlights">
+    <div class="highlights-inner">
+      <div class="highlight-item reveal">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z" />
+          </svg>
+        </div>
+        <div>
+          <div class="highlight-title">UNESCO World Heritage</div>
+          <p class="highlight-desc">Vietnam is home to 8 UNESCO World Heritage Sites including Hạ Long Bay, the Imperial
+            Citadel of Huế, and the Ancient Town of Hội An.</p>
+        </div>
+      </div>
+      <div class="highlight-item reveal" style="transition-delay: 0.15s">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z" />
+          </svg>
+        </div>
+        <div>
+          <div class="highlight-title">Street Food Paradise</div>
+          <p class="highlight-desc">From phở and bánh mì to fresh seafood and Cao Lầu — Vietnam's culinary scene is a
+            journey of flavors you'll never forget.</p>
+        </div>
+      </div>
+      <div class="highlight-item reveal" style="transition-delay: 0.3s">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+          </svg>
+        </div>
+        <div>
+          <div class="highlight-title">Warm Hospitality</div>
+          <p class="highlight-desc">Renowned for their friendliness and warmth, Vietnamese people make every visitor
+            feel genuinely welcomed throughout their journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">ETOURISMGR4</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 ETOURISMGR4. Made with ETOURISMGR4</p>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
